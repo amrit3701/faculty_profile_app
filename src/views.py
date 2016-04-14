@@ -12,4 +12,4 @@ class IndexView(generic.ListView):
 
     context_object_name = 'latest_question_list'
     def get_queryset(self):
-        return Person.objects
+        return Person.objects.all()
