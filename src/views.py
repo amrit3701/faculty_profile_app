@@ -10,6 +10,13 @@ from .models import Profile, Person
 class IndexView(generic.ListView):
     template_name = 'src/index.html'
 
-    context_object_name = 'latest_question_list'
+    context_object_name = 'latest_person_list'
+    def get_queryset(self):
+        return Person.objects.all()
+
+class FieldView(generic.ListView):
+    template_name = 'src/index.html'
+    context_object_name = 'latest_field'
+
     def get_queryset(self):
         return Person.objects.all()
